@@ -237,7 +237,8 @@ main {
     position: relative;
     display: inline-block;
     padding: 0 !important;
-    height: 100% !important;
+    height: 60px !important;
+    box-sizing: border-box;
 }
 
 .dropdown-anchor {
@@ -265,7 +266,7 @@ main {
     min-width: 144px;
     height: initial;
     line-height: initial;
-    bottom: 90px;
+    bottom: 60px;
     display: none;
     position: absolute;
     background-color: white;
