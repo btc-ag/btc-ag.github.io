@@ -15,6 +15,8 @@
 
     var switchLanguage = function (lang) {
         console.log("Switching to " + lang);
+        document.documentElement.setAttribute("lang", lang);
+        localStorage["language"] = lang;
         var languageLinks = languageList.getElementsByTagName("a");
         var targetLanguage = Array.from(languageLinks).find(function (value) {
             return value.getAttribute("data-language") === lang;
@@ -37,7 +39,7 @@
         });
 
     };
-    var userLang = navigator.language.split("-")[0];
+    var userLang = localStorage["language"] || navigator.language.split("-")[0];
     switchLanguage(userLang);
     Array.from(languageList.getElementsByTagName("a")).forEach(function(elem) {
         elem.addEventListener("click", function (ev) {
