@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BTC Open Source</title>
+    <title>BTC AG Open Source</title>
     <link href="css/style.css" rel="stylesheet">
+    <meta name="description" content="BTC AG gives back to the community! An overview of all the open source projects by the BTC AG.">
 </head>
 <body>
 
@@ -14,7 +15,7 @@
             <div class="flex-fill"></div>
             <a class="top-bar-link" href="https://www.btc-ag.com">
                 <img src="img/btc-logo-white.png">
-                Company Website
+                <span data-lang="en">Company Website</span><span data-lang="de">Unternehmenswebseite</span>
             </a>
             <a class="top-bar-link" href="https://github.com/btc-ag">
                 <img src="img/github_logo.png">
@@ -88,12 +89,25 @@
 
             <div class="flex-fill"></div>
 
-            <a href="imprint.html">Imprint / Impressum</a>
+            <a href="imprint.html"><span data-lang="en">Imprint</span><span data-lang="de">Impressum</span></a>
 
+            <a href="privacy.html"><span data-lang="en">Privacy Policy</span><span data-lang="de">Datenschutzerklärung</span></a>
 
-            <a href="privacy.html">Privacy Policy / Datenschutzerklärung</a>
+            <div class="dropdown" id="language-selector">
+                <div class="dropdown-anchor">
+                    <img src="img/language-icon.png">
+                    <span id="language-current" data-current-language="de">Deutsch</span>
+                    <div class="arrow-up"></div>
+                </div>
+                <div class="dropdown-content" id="language-list">
+                    <a role="button" data-language="en">English</a>
+                    <a role="button" data-language="de">Deutsch</a>
+                </div>
+
+            </div>
         </div>
     </div>
 </footer>
+<script src="js/script.js"></script>
 </body>
 </html>
