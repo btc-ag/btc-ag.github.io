@@ -1,3 +1,8 @@
+$btc_blue: #004594;
+$btc_blue_dark: #002D5E;
+$btc_yellow: #FFD500;
+$dark_gray: #333333;
+
 body {
   margin: 0;
   font-family: Roboto, sans-serif;
@@ -15,13 +20,13 @@ h1 {
 }
 
 a {
-  color: #004594;
+  color: $btc_blue;
   text-decoration: none;
 }
 
 .top-bar {
   z-index: 10;
-  background-color: #004594;
+  background-color: $btc_blue;
   width: 100%;
   position:relative;
 
@@ -30,7 +35,7 @@ a {
   align-items: center;
   justify-content: center;
 
-  box-shadow: 0 0 10px #002D5E;
+  box-shadow: 0 0 10px $btc_blue_dark;
 
   font-weight: 300;
 }
@@ -52,7 +57,7 @@ a {
 
 .arrow {
 
-  border: solid #004594;
+  border: solid $btc_blue;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
@@ -65,7 +70,7 @@ a {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 5px solid #333333;
+  border-bottom: 5px solid $dark_gray;
   margin: 5px;
 }
 
@@ -80,16 +85,17 @@ a {
 
   text-decoration: none;
   height: 100%;
+
+  :hover {
+    background-color: $btc_blue_dark;
+  }
+
+  img {
+    height: 24px;
+    margin-right: 10px;
+  }
 }
 
-.top-bar-link:hover {
-  background-color: #002D5E;
-}
-
-.top-bar-link img {
-  height: 24px;
-  margin-right: 10px;
-}
 
 .btc-welcome {
   width: 100%;
@@ -102,9 +108,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: rgb(0, 72, 148);
-
-
+  color: $btc_blue;
 }
 
 .project-showcase {
@@ -149,26 +153,23 @@ a {
   /*border-top: 1px solid rgb(0, 72, 148);*/
   text-align: justify;
   flex-grow: 3;
+
+  p {
+    margin-top: 0;
+  }
 }
 
 #btc-sticker {
   display: none;
 }
 
-.project-description p {
-  margin-top: 0;
-}
 
 .project-link {
   padding: 15px;
   /*border-top: 1px solid rgb(0, 72, 148);*/
-  color: rgb(0, 72, 148);
+  color: $btc_blue;
   display: flex;
   justify-content: flex-end;
-}
-
-.project-link a {
-
 }
 
 #btc-logo {
@@ -180,7 +181,7 @@ a {
   display: block;
   width: 90vw;
   height: 3px;
-  background: radial-gradient(circle at center, rgb(255,213,0) 0%, rgb(255,213,0) 50%, rgba(0,0,0,0));
+  background: radial-gradient(circle at center, $btc_yellow 0%, $btc_yellow 50%, rgba(0,0,0,0));
 }
 
 .footer {
@@ -194,7 +195,7 @@ a {
   justify-content: center;
 
   font-size: 11pt;
-  color: #333333;
+  color: $dark_gray;
   background-color: white;
   border-top: 1px solid #aaaaaa;
 }
@@ -210,7 +211,7 @@ a {
 }
 
 .footer a {
-  color: #333333;
+  color: $dark_gray;
   text-decoration: none;
 }
 
@@ -296,7 +297,7 @@ main {
     top: 120px;
     right: 16vw;
     transform: rotate(10deg);
-    filter: drop-shadow(0px 0px 5px rgb(0, 72, 148));
+    filter: drop-shadow(0px 0px 5px $btc_blue);
   }
 
   .divider {
