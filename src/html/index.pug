@@ -1,0 +1,60 @@
+doctype html
+
+html
+    head
+        title BTC AG Open Source
+        include partials/head.pug
+
+    body
+        include partials/header.pug
+        main
+            div
+                .btc-welcome
+                    img#btc-logo(src='img/btc-logo.png')
+                    span.divider
+                    h1 Open Source Projects
+                img#btc-sticker(src='img/BTC_loves_developers.png')
+            .project-showcase
+                .project
+                    img.project-logo(src='img/redg-logo.svg')
+                    h2.project-title RedG
+                    .project-description
+                        p
+                            | Model your database test data with a plain Java DSL!
+                            | RedG makes modelling database test data for unit tests incredibly simple.
+                            | It reduces modelling to the theoretically reachable minimum.
+                        p
+                            | RedG offers first-class Maven support, debugging tools and great customizability.
+                    .project-link
+                        a(href='https://btc-ag.github.io/redg')
+                            span Learn more
+                            i.arrow
+                .project
+                    img.project-logo(src='img/BTC_loves_developers.png')
+                    h2.project-title Service IDL
+                    .project-description
+                        p
+                            | Xtext-based Service IDL (Interface Definition Language) and Code Generators for Protobuf, C++, Java and .NET.
+                        p
+                            | It is currently experimental, and not yet suitable for general use.
+                    .project-link
+                        a(href='https://github.com/btc-ag/service-idl')
+                            span Learn more
+                            i.arrow
+                .project
+                    img.project-logo(src='img/BTC_loves_developers.png')
+                    h2.project-title featuretoggle
+                    .project-description
+                        p
+                            | A simple, lightweight feature toggle framework for ABAP
+                        p
+                            | With this framework you can toggle features in ABAP-Code at runtime.
+                            | This enables you to continuously deliver (potentially unfinished) Features in a
+                            | deactivated state into the production system. This repository includes the ABAP
+                            | backend and a UI5 GUI to manage toggle states.
+                    .project-link
+                        a(href='https://github.com/btc-ag/featuretoggle')
+                            span Learn more
+                            i.arrow
+
+        include partials/footer.pug

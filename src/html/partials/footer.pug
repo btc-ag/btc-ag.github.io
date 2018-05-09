@@ -1,0 +1,20 @@
+footer
+    .footer
+        .limit-width-box
+            span © 2018 BTC Business Technology Consulting AG
+            .flex-fill
+            a(href='imprint.html')
+                span(data-lang='en') Imprint
+                span(data-lang='de') Impressum
+            a(href='privacy.html')
+                span(data-lang='en') Privacy Policy
+                span(data-lang='de') Datenschutzerklärung
+            #language-selector.dropdown
+                .dropdown-anchor
+                    img(src='img/language-icon.png')
+                    span#language-current(data-current-language='de') Deutsch
+                    .arrow-up
+                #language-list.dropdown-content
+                    a(role='button', data-language='en') English
+                    a(role='button', data-language='de') Deutsch
+script(src='js/app.min.js')
