@@ -28,9 +28,17 @@ jobs:
 
       - name: Compile Pug to HTML
         run: pug src -o docs --basedir src
+
+      - name: Compile SCSS to CSS
+        run: |
+          if [ -d "src/css" ]; then
+            mkdir -p docs/css
+            sass src/css:docs/css --no-source-map --style=compressed
+          fi
+
       - name: Copy static assets and move to docs
         run: |
-          for dir in css fonts img js; do
+          for dir in fonts img js; do
             if [ -d "src/$dir" ]; then
               mkdir -p "docs/$dir"
               cp -r "src/$dir/." "docs/$dir/"
