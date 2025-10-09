@@ -20,8 +20,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install pug-cli
-        run: npm install -g pug-cli
+      - name: Install pug-cli and sass
+        run: npm install -g pug-cli sass
 
       - name: Clean docs folder
         run: rm -rf docs && mkdir docs
