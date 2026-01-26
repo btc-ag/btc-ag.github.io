@@ -283,61 +283,24 @@ a {
   align-items: start;
 }
 
-/* Featured Project (First Item) */
+/* Featured Project (First Item) - with NEW badge */
 .project:first-child {
-  grid-column: span 2;
-  background: linear-gradient(135deg, $btc-primary 0%, $btc-primary-dark 100%);
-  color: white;
   position: relative;
-  overflow: hidden;
 
   &::before {
     content: 'NEW';
     position: absolute;
-    top: 20px;
-    right: -15px;
+    top: $spacing-md;
+    left: $spacing-md;
     background: $btc-accent;
     color: $btc-primary;
-    padding: 5px 35px;
-    font-size: 12px;
+    padding: 4px 12px;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.1em;
-    transform: rotate(45deg);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .project-title,
-  .project-description,
-  .project-link a {
-    color: white;
-  }
-
-  .project-logo {
-    filter: brightness(0) invert(1) drop-shadow(0 4px 20px rgba(255, 255, 255, 0.3));
-  }
-
-  .tech-badge {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
-    color: white;
-  }
-
-  .github-stats {
-    border-top-color: rgba(255, 255, 255, 0.2);
-
-    .stat {
-      color: rgba(255, 255, 255, 0.9);
-    }
-  }
-
-  .project-link a {
-    background: $btc-accent;
-    color: $btc-primary;
-
-    &:hover {
-      background: #ffdf33;
-      transform: translateX(4px);
-    }
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(255, 213, 0, 0.4);
+    z-index: 10;
   }
 }
 
@@ -744,8 +707,9 @@ main {
 
   .project:first-child::before {
     font-size: 10px;
-    padding: 4px 25px;
-    right: -10px;
+    padding: 3px 10px;
+    top: $spacing-sm;
+    left: $spacing-sm;
   }
 
   .footer {
