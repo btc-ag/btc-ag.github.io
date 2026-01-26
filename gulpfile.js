@@ -53,7 +53,7 @@ function js() {
 }
 
 function images() {
-    return gulp.src("src/img/*")
+    return gulp.src("src/img/*", { encoding: false })
         .pipe(gulp.dest("docs/img"));
 }
 
