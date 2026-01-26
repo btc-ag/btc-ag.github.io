@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5AA6E7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#grad1)"/>
+
+  <!-- Cloud Icon -->
+  <path d="M 30 55 Q 30 45 40 45 Q 40 35 50 35 Q 60 35 60 45 Q 70 45 70 55 Q 70 65 60 65 L 40 65 Q 30 65 30 55 Z"
+        fill="white" opacity="0.95"/>
+
+  <!-- Lock/Shield Symbol -->
+  <path d="M 48 50 L 48 45 Q 48 42 50 42 Q 52 42 52 45 L 52 50 Z"
+        fill="#5AA6E7" stroke="#3B82F6" stroke-width="1"/>
+  <rect x="46" y="50" width="8" height="8" rx="1"
+        fill="#5AA6E7" stroke="#3B82F6" stroke-width="1"/>
+</svg>
