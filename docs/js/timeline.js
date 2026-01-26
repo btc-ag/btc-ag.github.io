@@ -109,6 +109,12 @@
         wrapper.className = 'github-readme';
         wrapper.innerHTML = htmlContent;
 
+        // Remove the first H1 heading to avoid duplication with the detail header
+        var firstH1 = wrapper.querySelector('h1');
+        if (firstH1) {
+            firstH1.remove();
+        }
+
         // Clean up and style the content
         readmeContainer.innerHTML = '';
         readmeContainer.appendChild(wrapper);
