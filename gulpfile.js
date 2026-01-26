@@ -1,43 +1,53 @@
-let gulp = require("gulp");
-let pug = require("gulp-pug");
-let sass = require("gulp-sass");
-let minifyCss = require("gulp-csso");
-let concat = require("gulp-concat");
+const gulp = require("gulp");
+const pug = require("gulp-pug");
+const sass = require("gulp-sass")(require("sass"));
+const minifyCss = require("gulp-csso");
+const concat = require("gulp-concat");
 
-gulp.task("html", function() {
+function html() {
     return gulp.src("src/html/*.pug")
         .pipe(pug())
-        .pipe(gulp.dest("dist/"));
-});
+        .pipe(gulp.dest("docs/"));
+}
 
-gulp.task("css", function() {
+function css() {
     return gulp.src("src/css/*.scss")
-        .pipe(sass()).on('error', sass.logError)
+        .pipe(sass().on('error', sass.logError))
         .pipe(minifyCss())
-        .pipe(gulp.dest("dist/css/"));
-});
+        .pipe(gulp.dest("docs/css/"));
+}
 
-gulp.task("js", function() {
+function js() {
     return gulp.src("src/js/*.js")
         .pipe(concat("app.min.js"))
-        .pipe(gulp.dest("dist/js"));
-});
+        .pipe(gulp.dest("docs/js"));
+}
 
-gulp.task("img", function() {
+function images() {
     return gulp.src("src/img/*")
-        .pipe(gulp.dest("dist/img"));
-});
-gulp.task("fonts", function() {
+        .pipe(gulp.dest("docs/img"));
+}
+
+function fonts() {
     return gulp.src("src/fonts/**/*")
-        .pipe(gulp.dest("dist/fonts"));
-});
+        .pipe(gulp.dest("docs/fonts"));
+}
 
-gulp.task("default", ["html", "css", "js", "img", "fonts"]);
+function watch() {
+    gulp.watch("src/html/**/*.pug", html);
+    gulp.watch("src/css/*.scss", css);
+    gulp.watch("src/js/*.js", js);
+    gulp.watch("src/img/*", images);
+    gulp.watch("src/fonts/**/*", fonts);
+}
 
-gulp.task("watch", ["default"], function() {
-    gulp.watch("src/html/*.pug", ['html']);
-    gulp.watch("src/css/*.scss", ['css']);
-    gulp.watch("src/js/*.js", ['js']);
-    gulp.watch("src/img/*", ['img']);
-    gulp.watch("src/fonts/**/*", ['fonts']);
-});
+const build = gulp.parallel(html, css, js, images, fonts);
+const dev = gulp.series(build, watch);
+
+exports.html = html;
+exports.css = css;
+exports.js = js;
+exports.images = images;
+exports.fonts = fonts;
+exports.watch = dev;
+exports.default = build;
