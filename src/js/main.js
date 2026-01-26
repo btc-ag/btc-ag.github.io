@@ -34,8 +34,8 @@
         Array.from(document.querySelectorAll("[data-lang]")).forEach(function(elem) {
             elem.style.display = "none";
         });
-        Array.from(document.querySelectorAll("[data-lang=" + languageData.code + "]")).forEach(function(elem) {
-            elem.style.display = "block";
+        Array.from(document.querySelectorAll('[data-lang="' + languageData.code + '"]')).forEach(function(elem) {
+            elem.style.display = "inline";
         });
 
     };

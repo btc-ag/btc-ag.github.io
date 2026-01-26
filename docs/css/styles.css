@@ -154,12 +154,12 @@ a:hover {
 
 .btc-welcome {
   position: relative;
-  min-height: 85vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-2xl) var(--spacing-md);
+  padding: var(--spacing-xl) var(--spacing-md);
   overflow: hidden;
   background: linear-gradient(135deg,
     #004594 0%,
@@ -296,13 +296,13 @@ a:hover {
 }
 
 .project:first-child::before {
-  content: 'FEATURED';
+  content: 'NEW';
   position: absolute;
   top: 20px;
-  right: -30px;
+  right: -15px;
   background: var(--btc-accent);
   color: var(--btc-primary);
-  padding: 5px 40px;
+  padding: 5px 35px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -752,7 +752,8 @@ footer {
 
   .project:first-child::before {
     font-size: 10px;
-    padding: 4px 30px;
+    padding: 4px 25px;
+    right: -10px;
   }
 
   .footer {
