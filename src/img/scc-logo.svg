@@ -9,25 +9,13 @@
   <!-- Background Circle -->
   <circle cx="50" cy="50" r="45" fill="url(#gradSCC)"/>
 
-  <!-- Compass Circle -->
-  <circle cx="50" cy="50" r="25" fill="white" opacity="0.95" stroke="#10b981" stroke-width="2"/>
+  <!-- Cloud Icon -->
+  <path d="M 30 55 Q 30 45 40 45 Q 40 35 50 35 Q 60 35 60 45 Q 70 45 70 55 Q 70 65 60 65 L 40 65 Q 30 65 30 55 Z"
+        fill="white" opacity="0.95"/>
 
-  <!-- Compass Points -->
-  <!-- North (pointing up) -->
-  <path d="M 50 30 L 47 40 L 50 38 L 53 40 Z" fill="#059669"/>
-  <!-- South (pointing down) -->
-  <path d="M 50 70 L 47 60 L 50 62 L 53 60 Z" fill="#10b981" opacity="0.7"/>
-  <!-- East (pointing right) -->
-  <path d="M 70 50 L 60 47 L 62 50 L 60 53 Z" fill="#059669" opacity="0.7"/>
-  <!-- West (pointing left) -->
-  <path d="M 30 50 L 40 47 L 38 50 L 40 53 Z" fill="#10b981" opacity="0.7"/>
-
-  <!-- Center dot -->
-  <circle cx="50" cy="50" r="3" fill="#059669"/>
-
-  <!-- Cloud icon (smaller, in background) -->
-  <path d="M 38 48 Q 38 45 40 45 Q 40 42 43 42 Q 45 42 45 45 Q 47 45 47 48 Q 47 50 45 50 L 40 50 Q 38 50 38 48 Z"
-        fill="#10b981" opacity="0.3"/>
-  <path d="M 53 52 Q 53 49 55 49 Q 55 46 58 46 Q 60 46 60 49 Q 62 49 62 52 Q 62 54 60 54 L 55 54 Q 53 54 53 52 Z"
-        fill="#10b981" opacity="0.3"/>
+  <!-- Lock/Shield Symbol -->
+  <path d="M 48 50 L 48 45 Q 48 42 50 42 Q 52 42 52 45 L 52 50 Z"
+        fill="#10b981" stroke="#059669" stroke-width="1"/>
+  <rect x="46" y="50" width="8" height="8" rx="1"
+        fill="#10b981" stroke="#059669" stroke-width="1"/>
 </svg>
