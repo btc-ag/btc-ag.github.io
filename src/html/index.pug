@@ -8,11 +8,11 @@ html
     body
         include partials/header.pug
         main
-            div
-                .btc-welcome
-                    img#btc-logo(src='img/btc-logo.png')
-                    span.divider
-                    h1 Open Source Projects
+            .btc-welcome
+                img#btc-logo(src='img/btc-logo.png')
+                span.divider
+                h1 Open Source Projects
+                p Innovative tools and frameworks developed by BTC AG - empowering developers worldwide with cutting-edge technology solutions.
                 img#btc-sticker(src='img/BTC_loves_developers.png')
             .project-showcase
                 .project
@@ -22,12 +22,19 @@ html
                         p
                             | RedG has been moved to #[a(href='https://github.com/yamass') yamass]
                             | and is not maintained by BTC anymore.
-                        p                       
-                            | Model your database test data with a plain Java DSL!
-                            | RedG makes modelling database test data for unit tests incredibly simple.
-                            | It reduces modelling to the theoretically reachable minimum.
                         p
-                            | RedG offers first-class Maven support, debugging tools and great customizability.
+                            | Model your database test data with a plain Java DSL! RedG makes modelling database test data for unit tests incredibly simple. It reduces modelling to the theoretically reachable minimum.
+                        p
+                            | RedG offers first-class Maven support, debugging tools and great customizability. Perfect for enterprise applications with complex database schemas.
+                    .tech-stack
+                        span.tech-badge Java
+                        span.tech-badge Maven
+                        span.tech-badge Testing
+                        span.tech-badge DSL
+                    .github-stats
+                        .stat
+                            span ⭐
+                            span Database Testing Framework
                     .project-link
                         a(href='https://github.com/yamass/redg')
                             span Learn more
@@ -39,7 +46,20 @@ html
                         p
                             | Xtext-based Service IDL (Interface Definition Language) and Code Generators for Protobuf, C++, Java and .NET.
                         p
-                            | It is currently experimental, and not yet suitable for general use.
+                            | Define your service interfaces once and generate code for multiple platforms. Streamlines cross-platform development with consistent API definitions.
+                        p
+                            strong Note:
+                            |  Currently experimental, and not yet suitable for general use.
+                    .tech-stack
+                        span.tech-badge Xtext
+                        span.tech-badge Protobuf
+                        span.tech-badge C++
+                        span.tech-badge Java
+                        span.tech-badge .NET
+                    .github-stats
+                        .stat
+                            span 🔬
+                            span Experimental Project
                     .project-link
                         a(href='https://github.com/btc-ag/service-idl')
                             span Learn more
@@ -49,12 +69,20 @@ html
                     h2.project-title featuretoggle
                     .project-description
                         p
-                            | A simple, lightweight feature toggle framework for ABAP
+                            | A simple, lightweight feature toggle framework for ABAP - enabling continuous delivery in SAP environments.
                         p
-                            | With this framework you can toggle features in ABAP-Code at runtime.
-                            | This enables you to continuously deliver (potentially unfinished) Features in a
-                            | deactivated state into the production system. This repository includes the ABAP
-                            | backend and a UI5 GUI to manage toggle states.
+                            | Toggle features in ABAP code at runtime, delivering potentially unfinished features in a deactivated state to production. Perfect for implementing CI/CD practices in SAP landscapes.
+                        p
+                            | Includes ABAP backend and UI5 GUI to manage toggle states with an intuitive interface.
+                    .tech-stack
+                        span.tech-badge ABAP
+                        span.tech-badge SAP UI5
+                        span.tech-badge CI/CD
+                        span.tech-badge SAP
+                    .github-stats
+                        .stat
+                            span 🔄
+                            span Continuous Delivery
                     .project-link
                         a(href='https://github.com/btc-ag/featuretoggle')
                             span Learn more
@@ -64,12 +92,20 @@ html
                     h2.project-title Sovereign Architecture Advisor (SAA)
                     .project-description
                         p
-                            | Ein interaktiver Wizard zur Bewertung und Empfehlung souveräner Cloud-Architekturen für Unternehmensanwendungen.
+                            | Ein interaktiver Wizard zur Bewertung und Empfehlung souveräner Cloud-Architekturen für Unternehmensanwendungen - Fokus auf europäische Datensouveränität.
                         p
-                            | Das Tool hilft Organisationen bei der Evaluierung und dem Vergleich von Cloud-Anbietern -
-                            | insbesondere europäischer und souveräner Alternativen - basierend auf Multi-Kriterien-Analysen.
-                            | Benutzer können Anwendungen auswählen, Komponenten konfigurieren, Sizing-Parameter festlegen und
-                            | erhalten gewichtete Empfehlungen mit Kostenschätzungen.
+                            | Hilft Organisationen bei der Evaluierung und dem Vergleich von Cloud-Anbietern, insbesondere europäischer und souveräner Alternativen, basierend auf Multi-Kriterien-Analysen.
+                        p
+                            | Wählen Sie Anwendungen aus, konfigurieren Sie Komponenten, legen Sie Sizing-Parameter fest und erhalten Sie gewichtete Empfehlungen mit detaillierten Kostenschätzungen.
+                    .tech-stack
+                        span.tech-badge Cloud Architecture
+                        span.tech-badge Decision Support
+                        span.tech-badge Cost Analysis
+                        span.tech-badge Sovereignty
+                    .github-stats
+                        .stat
+                            span 🇪🇺
+                            span European Cloud Sovereignty
                     .project-link
                         a(href='https://github.com/btc-ag/SAA')
                             span Learn more
@@ -81,9 +117,18 @@ html
                         p
                             | Ein interaktives Tool zur Bewertung und Auswahl von Cloud-Anbietern basierend auf der Balance zwischen Kontrolle/Souveränität und Performance-Fähigkeiten.
                         p
-                            | Das Tool ermöglicht die Bewertung von Cloud-Anbietern über zwei Dimensionen -
-                            | Souveränität und Performance - mit dynamischer Gewichtung. Es bietet eine 2D-Matrix-Visualisierung,
-                            | Filterung nach Anbieter-Kategorie und transparente Scoring-Methodik für über 14 Cloud-Provider.
+                            | Bewerten Sie Cloud-Anbieter über zwei Dimensionen - Souveränität und Performance - mit dynamischer Gewichtung. 2D-Matrix-Visualisierung macht komplexe Entscheidungen transparent und nachvollziehbar.
+                        p
+                            | Filterung nach Anbieter-Kategorie und transparente Scoring-Methodik für über 14 Cloud-Provider. Ideal für strategische IT-Entscheidungen.
+                    .tech-stack
+                        span.tech-badge Cloud Providers
+                        span.tech-badge Decision Matrix
+                        span.tech-badge Visualization
+                        span.tech-badge Analytics
+                    .github-stats
+                        .stat
+                            span 📊
+                            span 14+ Cloud Providers
                     .project-link
                         a(href='https://github.com/btc-ag/SCC')
                             span Learn more
