@@ -1,8 +1,10 @@
 const gulp = require("gulp");
 const pug = require("gulp-pug");
-const sass = require("gulp-sass")(require("sass"));
+const sass = require("sass");
 const minifyCss = require("gulp-csso");
 const concat = require("gulp-concat");
+const { Transform } = require("stream");
+const path = require("path");
 
 function html() {
     return gulp.src("src/html/*.pug")
@@ -11,8 +13,35 @@ function html() {
 }
 
 function css() {
+    // Custom transform stream to compile SCSS using modern Sass API
+    const compileSass = new Transform({
+        objectMode: true,
+        transform(file, encoding, callback) {
+            if (file.isNull()) {
+                return callback(null, file);
+            }
+
+            if (file.isStream()) {
+                return callback(new Error('Streaming not supported'));
+            }
+
+            try {
+                const result = sass.compile(file.path, {
+                    style: 'expanded',
+                    sourceMap: true
+                });
+
+                file.contents = Buffer.from(result.css);
+                file.path = file.path.replace('.scss', '.css');
+                callback(null, file);
+            } catch (error) {
+                callback(error);
+            }
+        }
+    });
+
     return gulp.src("src/css/*.scss")
-        .pipe(sass().on('error', sass.logError))
+        .pipe(compileSass)
         .pipe(minifyCss())
         .pipe(gulp.dest("docs/css/"));
 }
