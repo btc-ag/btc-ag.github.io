@@ -1,0 +1,285 @@
+doctype html
+
+html
+    head
+        title BTC AG Open Source
+        include partials/head.pug
+        link(href='css/timeline-styles.css' rel='stylesheet')
+
+    body
+        include partials/header.pug
+
+        main.timeline-layout
+            // Left: Timeline Navigation
+            aside.timeline-sidebar
+                .timeline-header
+                    h1
+                        span(data-lang='en') Open Source Timeline
+                        span(data-lang='de') Open Source Zeitleiste
+                    p.timeline-subtitle
+                        span(data-lang='en') Explore our projects chronologically
+                        span(data-lang='de') Entdecken Sie unsere Projekte chronologisch
+
+                .timeline-container
+                    .timeline-line
+
+                    // 2026 - Newest Projects
+                    .timeline-item(data-project='saa' data-active='true')
+                        .timeline-dot.timeline-dot-new
+                        .timeline-date
+                            span 2026
+                            span.timeline-badge NEW
+                        .timeline-content
+                            h3 Sovereign Architecture Advisor
+                            p.timeline-tech
+                                span 🇪🇺
+                                span Cloud Architecture
+
+                    .timeline-item(data-project='scc')
+                        .timeline-dot.timeline-dot-new
+                        .timeline-date 2026
+                        .timeline-content
+                            h3 Sovereign Cloud Compass
+                            p.timeline-tech
+                                span 📊
+                                span Decision Matrix
+
+                    // 2019
+                    .timeline-item(data-project='service-idl')
+                        .timeline-dot.timeline-dot-experimental
+                        .timeline-date 2019
+                        .timeline-content
+                            h3 Service IDL
+                            p.timeline-tech
+                                span 🔬
+                                span Experimental
+
+                    // 2018
+                    .timeline-item(data-project='featuretoggle')
+                        .timeline-dot
+                        .timeline-date 2018
+                        .timeline-content
+                            h3 featuretoggle
+                            p.timeline-tech
+                                span 🔄
+                                span SAP ABAP
+
+                    .timeline-item(data-project='redg')
+                        .timeline-dot.timeline-dot-moved
+                        .timeline-date 2018
+                        .timeline-content
+                            h3 RedG
+                            p.timeline-tech
+                                span ⚠️
+                                span Moved
+
+            // Right: Detail Panel
+            section.detail-panel
+                // SAA Detail (Active by default)
+                .project-detail(id='detail-saa' data-active='true')
+                    .detail-header
+                        img.detail-logo(src='img/saa-logo.svg' alt='SAA Logo')
+                        .detail-title-section
+                            h2 Sovereign Architecture Advisor (SAA)
+                            .detail-meta
+                                span.detail-year 2026
+                                span.detail-status.status-new NEW
+
+                    .detail-tech-stack
+                        span.tech-badge Cloud Architecture
+                        span.tech-badge Decision Support
+                        span.tech-badge Cost Analysis
+                        span.tech-badge Sovereignty
+
+                    .detail-description
+                        p Ein interaktiver Wizard zur Bewertung und Empfehlung souveräner Cloud-Architekturen für Unternehmensanwendungen - Fokus auf europäische Datensouveränität.
+                        p Hilft Organisationen bei der Evaluierung und dem Vergleich von Cloud-Anbietern, insbesondere europäischer und souveräner Alternativen, basierend auf Multi-Kriterien-Analysen.
+
+                    .detail-readme
+                        h3
+                            span(data-lang='en') About this Project
+                            span(data-lang='de') Über dieses Projekt
+                        .readme-content
+                            p
+                                strong Key Features:
+                            ul
+                                li Multi-criteria analysis for cloud provider evaluation
+                                li Focus on European and sovereign cloud alternatives
+                                li Interactive wizard for application configuration
+                                li Detailed cost estimations and recommendations
+                                li Sovereignty scoring and compliance checks
+
+                    .detail-actions
+                        a.btn-primary(href='https://github.com/btc-ag/SAA' target='_blank')
+                            span(data-lang='en') View on GitHub
+                            span(data-lang='de') Auf GitHub ansehen
+                            i.arrow
+
+                // SCC Detail
+                .project-detail(id='detail-scc')
+                    .detail-header
+                        img.detail-logo(src='img/scc-logo.svg' alt='SCC Logo')
+                        .detail-title-section
+                            h2 Sovereign Cloud Compass (SCC)
+                            .detail-meta
+                                span.detail-year 2026
+                                span.detail-status.status-new NEW
+
+                    .detail-tech-stack
+                        span.tech-badge Cloud Providers
+                        span.tech-badge Decision Matrix
+                        span.tech-badge Visualization
+                        span.tech-badge Analytics
+
+                    .detail-description
+                        p Ein interaktives Tool zur Bewertung und Auswahl von Cloud-Anbietern basierend auf der Balance zwischen Kontrolle/Souveränität und Performance-Fähigkeiten.
+                        p Bewerten Sie Cloud-Anbieter über zwei Dimensionen - Souveränität und Performance - mit dynamischer Gewichtung.
+
+                    .detail-readme
+                        h3
+                            span(data-lang='en') About this Project
+                            span(data-lang='de') Über dieses Projekt
+                        .readme-content
+                            p
+                                strong Key Features:
+                            ul
+                                li 2D matrix visualization for cloud provider comparison
+                                li Dynamic weighting of sovereignty vs. performance
+                                li Coverage of 14+ major cloud providers
+                                li Filter by provider category (hyperscaler, sovereign, etc.)
+                                li Transparent scoring methodology
+
+                    .detail-actions
+                        a.btn-primary(href='https://github.com/btc-ag/SCC' target='_blank')
+                            span(data-lang='en') View on GitHub
+                            span(data-lang='de') Auf GitHub ansehen
+                            i.arrow
+
+                // Service IDL Detail
+                .project-detail(id='detail-service-idl')
+                    .detail-header
+                        img.detail-logo(src='img/BTC_loves_developers.png' alt='Service IDL')
+                        .detail-title-section
+                            h2 Service IDL
+                            .detail-meta
+                                span.detail-year 2019
+                                span.detail-status.status-experimental EXPERIMENTAL
+
+                    .detail-tech-stack
+                        span.tech-badge Xtext
+                        span.tech-badge Protobuf
+                        span.tech-badge C++
+                        span.tech-badge Java
+                        span.tech-badge .NET
+
+                    .detail-description
+                        p Xtext-based Service IDL (Interface Definition Language) and Code Generators for Protobuf, C++, Java and .NET.
+                        p Define your service interfaces once and generate code for multiple platforms.
+
+                    .detail-readme
+                        h3
+                            span(data-lang='en') About this Project
+                            span(data-lang='de') Über dieses Projekt
+                        .readme-content
+                            p
+                                strong Note:
+                                |  This project is currently experimental and not yet suitable for general use.
+                            p
+                                strong Key Features:
+                            ul
+                                li Cross-platform interface definition language
+                                li Code generation for multiple target platforms
+                                li Protobuf integration
+                                li Consistent API definitions across languages
+
+                    .detail-actions
+                        a.btn-primary(href='https://github.com/btc-ag/service-idl' target='_blank')
+                            span(data-lang='en') View on GitHub
+                            span(data-lang='de') Auf GitHub ansehen
+                            i.arrow
+
+                // featuretoggle Detail
+                .project-detail(id='detail-featuretoggle')
+                    .detail-header
+                        img.detail-logo(src='img/BTC_loves_developers.png' alt='featuretoggle')
+                        .detail-title-section
+                            h2 featuretoggle
+                            .detail-meta
+                                span.detail-year 2018
+
+                    .detail-tech-stack
+                        span.tech-badge ABAP
+                        span.tech-badge SAP UI5
+                        span.tech-badge CI/CD
+                        span.tech-badge SAP
+
+                    .detail-description
+                        p A simple, lightweight feature toggle framework for ABAP - enabling continuous delivery in SAP environments.
+                        p Toggle features in ABAP code at runtime, delivering potentially unfinished features in a deactivated state to production.
+
+                    .detail-readme
+                        h3
+                            span(data-lang='en') About this Project
+                            span(data-lang='de') Über dieses Projekt
+                        .readme-content
+                            p
+                                strong Key Features:
+                            ul
+                                li Runtime feature toggling in ABAP
+                                li Enable continuous delivery in SAP landscapes
+                                li ABAP backend framework
+                                li UI5 GUI for toggle management
+                                li Perfect for CI/CD practices in SAP
+
+                    .detail-actions
+                        a.btn-primary(href='https://github.com/btc-ag/featuretoggle' target='_blank')
+                            span(data-lang='en') View on GitHub
+                            span(data-lang='de') Auf GitHub ansehen
+                            i.arrow
+
+                // RedG Detail
+                .project-detail(id='detail-redg')
+                    .detail-header
+                        img.detail-logo(src='img/redg-logo.svg' alt='RedG')
+                        .detail-title-section
+                            h2 RedG
+                            .detail-meta
+                                span.detail-year 2018
+                                span.detail-status.status-moved MOVED
+
+                    .detail-tech-stack
+                        span.tech-badge Java
+                        span.tech-badge Maven
+                        span.tech-badge Testing
+                        span.tech-badge DSL
+
+                    .detail-description
+                        p
+                            strong Note:
+                            |  RedG has been moved to
+                            a(href='https://github.com/yamass' target='_blank') yamass
+                            |  and is not maintained by BTC anymore.
+                        p Model your database test data with a plain Java DSL! RedG makes modelling database test data for unit tests incredibly simple.
+
+                    .detail-readme
+                        h3
+                            span(data-lang='en') About this Project
+                            span(data-lang='de') Über dieses Projekt
+                        .readme-content
+                            p
+                                strong Key Features:
+                            ul
+                                li Plain Java DSL for database test data
+                                li Minimal modelling approach
+                                li First-class Maven support
+                                li Debugging tools included
+                                li Great customizability for enterprise apps
+
+                    .detail-actions
+                        a.btn-primary(href='https://github.com/yamass/redg' target='_blank')
+                            span(data-lang='en') View on GitHub
+                            span(data-lang='de') Auf GitHub ansehen
+                            i.arrow
+
+        include partials/footer.pug
+        script(src='js/timeline.js')
