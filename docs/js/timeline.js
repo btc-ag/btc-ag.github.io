@@ -45,6 +45,95 @@
         return;
     }
 
+    // GitHub repository mapping
+    var repoMapping = {
+        'saa': { owner: 'btc-ag', repo: 'SAA' },
+        'scc': { owner: 'btc-ag', repo: 'SCC' },
+        'service-idl': { owner: 'btc-ag', repo: 'service-idl' },
+        'featuretoggle': { owner: 'btc-ag', repo: 'featuretoggle' },
+        'redg': { owner: 'yamass', repo: 'redg' }
+    };
+
+    // Cache for fetched READMEs
+    var readmeCache = {};
+
+    // Fetch README from GitHub API
+    function fetchReadme(projectId) {
+        var repoInfo = repoMapping[projectId];
+        if (!repoInfo) return;
+
+        // Check cache first
+        if (readmeCache[projectId]) {
+            displayReadme(projectId, readmeCache[projectId]);
+            return;
+        }
+
+        var readmeContainer = document.querySelector('#detail-' + projectId + ' .readme-content');
+        if (!readmeContainer) return;
+
+        // Show loading state
+        readmeContainer.innerHTML = '<p style="text-align: center; color: #6c757d;"><em>Loading README...</em></p>';
+
+        // Fetch from GitHub API
+        var apiUrl = 'https://api.github.com/repos/' + repoInfo.owner + '/' + repoInfo.repo + '/readme';
+
+        fetch(apiUrl, {
+            headers: {
+                'Accept': 'application/vnd.github.html'
+            }
+        })
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error('README not found');
+            }
+            return response.text();
+        })
+        .then(function(html) {
+            // Cache the result
+            readmeCache[projectId] = html;
+            displayReadme(projectId, html);
+        })
+        .catch(function(error) {
+            console.error('Error fetching README for ' + projectId + ':', error);
+            readmeContainer.innerHTML = '<p style="color: #dc3545;"><em>Unable to load README from GitHub.</em></p>';
+        });
+    }
+
+    // Display README content
+    function displayReadme(projectId, htmlContent) {
+        var readmeContainer = document.querySelector('#detail-' + projectId + ' .readme-content');
+        if (!readmeContainer) return;
+
+        // Create a wrapper div for GitHub-style markdown
+        var wrapper = document.createElement('div');
+        wrapper.className = 'github-readme';
+        wrapper.innerHTML = htmlContent;
+
+        // Clean up and style the content
+        readmeContainer.innerHTML = '';
+        readmeContainer.appendChild(wrapper);
+
+        // Fix relative image URLs to point to GitHub
+        var repoInfo = repoMapping[projectId];
+        var images = wrapper.querySelectorAll('img');
+        images.forEach(function(img) {
+            var src = img.getAttribute('src');
+            if (src && !src.startsWith('http')) {
+                img.setAttribute('src', 'https://raw.githubusercontent.com/' + repoInfo.owner + '/' + repoInfo.repo + '/master/' + src);
+            }
+        });
+
+        // Fix relative links
+        var links = wrapper.querySelectorAll('a');
+        links.forEach(function(link) {
+            var href = link.getAttribute('href');
+            if (href && !href.startsWith('http') && !href.startsWith('#')) {
+                link.setAttribute('href', 'https://github.com/' + repoInfo.owner + '/' + repoInfo.repo + '/blob/master/' + href);
+                link.setAttribute('target', '_blank');
+            }
+        });
+    }
+
     function showProject(projectId) {
         timelineItems.forEach(function(item) {
             item.setAttribute('data-active', 'false');
@@ -63,6 +152,9 @@
             if (detailPanel) {
                 detailPanel.scrollTo({ top: 0, behavior: 'smooth' });
             }
+
+            // Fetch README for this project
+            fetchReadme(projectId);
         }
         localStorage.setItem('activeProject', projectId);
     }
@@ -77,5 +169,11 @@
     var savedProject = localStorage.getItem('activeProject');
     if (savedProject) {
         showProject(savedProject);
+    } else {
+        // Load README for initially active project
+        var initialActive = document.querySelector('.timeline-item[data-active="true"]');
+        if (initialActive) {
+            fetchReadme(initialActive.getAttribute('data-project'));
+        }
     }
 })();

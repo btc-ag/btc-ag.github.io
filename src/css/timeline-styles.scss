@@ -410,7 +410,166 @@ body {
     font-size: 1rem;
     line-height: 1.7;
     color: $text-secondary;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 16px;
 
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $surface-tertiary;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #adb5bd;
+      border-radius: 4px;
+
+      &:hover {
+        background: #6c757d;
+      }
+    }
+
+    // GitHub README Styling
+    .github-readme {
+      h1, h2, h3, h4, h5, h6 {
+        color: $btc-primary;
+        margin-top: 24px;
+        margin-bottom: 16px;
+        font-weight: 600;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      h1 {
+        font-size: 2rem;
+        border-bottom: 2px solid $surface-tertiary;
+        padding-bottom: 12px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        border-bottom: 1px solid $surface-tertiary;
+        padding-bottom: 8px;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+      }
+
+      p {
+        margin-bottom: 16px;
+        line-height: 1.7;
+
+        code {
+          background: $surface-secondary;
+          padding: 2px 6px;
+          border-radius: 4px;
+          font-size: 0.9em;
+          color: $btc-primary;
+        }
+      }
+
+      a {
+        color: $btc-primary;
+        text-decoration: underline;
+
+        &:hover {
+          color: $btc-primary-dark;
+        }
+      }
+
+      ul, ol {
+        margin-bottom: 16px;
+        padding-left: 32px;
+
+        li {
+          margin-bottom: 8px;
+        }
+      }
+
+      ul {
+        list-style-type: disc;
+      }
+
+      ol {
+        list-style-type: decimal;
+      }
+
+      pre {
+        background: $surface-secondary;
+        border: 1px solid $surface-tertiary;
+        border-radius: 8px;
+        padding: 16px;
+        overflow-x: auto;
+        margin-bottom: 16px;
+
+        code {
+          background: none;
+          padding: 0;
+          font-size: 0.9em;
+          line-height: 1.5;
+        }
+      }
+
+      blockquote {
+        border-left: 4px solid $btc-accent;
+        padding-left: 16px;
+        margin: 16px 0;
+        color: $text-tertiary;
+        font-style: italic;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 16px;
+
+        th, td {
+          border: 1px solid $surface-tertiary;
+          padding: 8px 12px;
+          text-align: left;
+        }
+
+        th {
+          background: $surface-secondary;
+          font-weight: 600;
+          color: $btc-primary;
+        }
+
+        tr:hover {
+          background: $surface-secondary;
+        }
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 16px 0;
+      }
+
+      hr {
+        border: none;
+        border-top: 2px solid $surface-tertiary;
+        margin: 24px 0;
+      }
+
+      // Code syntax highlighting (basic)
+      .highlight {
+        background: $surface-secondary;
+        border-radius: 8px;
+        padding: 16px;
+        overflow-x: auto;
+        margin-bottom: 16px;
+      }
+    }
+
+    // Fallback for non-GitHub content
     p {
       margin-bottom: 16px;
 
