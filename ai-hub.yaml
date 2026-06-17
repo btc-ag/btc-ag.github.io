@@ -14,7 +14,11 @@ techstack:
   - HTML/CSS/JS
   - Gulp
   - GitHub Pages
-nutzer: Externe und interne Besucher der GitHub-Präsenz der BTC Group.
+nutzer:
+  - Externe Besucher
+  - Interne Mitarbeitende
+anwendungsfaelle_intro: >-
+  Sichtbarer Einstiegspunkt in die GitHub-Präsenz der BTC Group.
 anwendungsfaelle:
   - Überblick über die öffentlichen BTC-GitHub-Projekte
   - Einstiegspunkt und Weiterleitung zu den Repositories
